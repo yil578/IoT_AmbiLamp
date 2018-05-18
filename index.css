@@ -1,0 +1,57 @@
+#picker {
+	display: block;
+	margin: 0 auto;
+	background-color: #EFFFC9;
+	width: 100%;
+	height: 500px;
+	border: none;
+	font-size: 2em;
+	letter-spacing: 3px;
+}
+
+form {
+	margin: 20px;
+	text-align: center;
+}
+
+#color {
+	text-transform: uppercase;
+	color: gray;
+	padding: 11px;
+}
+
+#set_default {
+	border-radius: 5px;
+	padding: 11px;
+	background-color: #ddd;
+	font-size: 14px;
+	border: none;
+}
+
+#charts-container {
+	display: flex;
+	justify-content: center;
+}
+
+.chart {
+	margin: 15px;
+}
+
+#about {
+	width: 88%;
+	margin: 0 auto;
+}
+
+h1 {
+	text-transform: uppercase;
+	text-align: center;
+	margin: 30px;
+	margin-top: 
+}
+
+p {
+	color: #474747;
+	letter-spacing: .5px;
+	margin: 20px;
+	line-height: 1.3;
+}

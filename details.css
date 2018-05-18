@@ -1,0 +1,46 @@
+.btn {
+	display: block;
+	border-radius: 5px;
+	border: none;
+	padding: 11px;
+	font-size: 14px;
+	margin: 30px auto;
+	background-color: #465a3f;
+	color: white;
+}
+
+.chart {
+	margin: 30px auto;
+}
+
+#tables-container {
+	display: flex;
+	justify-content: center;
+}
+
+tbody {
+    overflow: scroll;
+    max-height: 100px; /* important! */
+    position: absolute; /* only scroll the tbody and fix the thead*/
+}
+
+.table {
+	margin: 40px;
+	max-height: -webkit-calc(100vh - 80px - 62px);
+}
+
+td, th {
+	padding: 10px;
+    width: 117px; /* fix the width of all cells regardless of word counts */
+    font-size: 14px
+}
+
+td {
+    letter-spacing: .5px;
+}
+
+th {
+    background-color: #465a3f;
+    color: white;
+    text-align: left;
+}
