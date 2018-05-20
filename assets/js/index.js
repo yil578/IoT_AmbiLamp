@@ -75,3 +75,11 @@ var soundChart = new Chart(soundCtx, {
         responsive:false
     }
 });
+
+function update(jscolor) {
+    document.getElementById("color").value = jscolor;
+}
+
+function apply(){
+    document.getElementById("smt").click();
+}
