@@ -17,10 +17,38 @@
     if (isset($_POST['set_color'])) {
    	$color = $_POST['color'];
     }
+
+     if (isset($_POST['set_default'])) {
+                      $color_data->insert($_POST['color']);
+    }
+                    /* BEGIN LED CODE */
+    /******** Use the LED schematic in Challenge 2, LED Circuit
+    * to complete these constructor lines. *************************/
+    $red = new GPIO(22, "out",4);
+    $green = new GPIO(27, "out",3);
+    $blue = new GPIO(17, "out",1);
+    $colorArray = $color.str_split();
+    /******* Our colors are in hexadecimal - that is, come in the * form #
+    ----- where each dash is a character in the set * {0 1 2 3 4 5 6 7 8 9 a b c d e f},
+    which is the number * system in base 16. The RGB LED accepts values 0-255 for *
+    each of the three colors. Conveniently, 255 is the
+    * largest decimal value of two hexademical digits. That
+    * is, #FF = (15 * 16^1) + (15 * 16^0) = 255. Thus, in a
+    * hex color such as #BAD94D, the red PWM value is
+    * respresented by #BA, green by #D9, and blue by #4D.
+    * The str_split() function above turns our color string
+    * into an array of characters (e.g. [B, A, D, 9, 4, D])
+    * and we pwm_write() red with the decimal value of #BA in * the line below. Follow this reasoning to complete the
+    * pwm_write()inputs for green and blue. ********************************************************/
+    $red->pwm_write(hexdec($colorArray[0].$colorArray[1]));
+    $green->pwm_write(hexdec($colorArray[2].$colorArray[3]));
+    $blue->pwm_write(hexdec($colorArray[4].$colorArray[5]));
+                        /* END LED CODE */
   ?>
 
   <!-- JSCOLOR PICKER -->
-  <input type="button" class="jscolor" id="picker" onchange="update(this.jscolor)" onfocusout="apply()" value="<?php echo "'" + $color + "'" ?> >
+  <input type="button" class="jscolor" id="picker" onchange="update(this.jscolor)" onfocusout="apply()"
+  value=<?php echo "'" . $color . "'" ?> >
   
   <!-- FORM -->
   <form method="POST">
